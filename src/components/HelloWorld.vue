@@ -3,7 +3,7 @@
     <div class="hole" v-for="(k, idx) in holes" :key="idx">
       <div class="mole" :class="{ hide: k }">
         <a @click = "hit(idx)" :class="{ hit: hiting }">
-          <img src="/mole.png">
+          <img src="./mole.png">
         </a>
       </div>
     </div>
@@ -11,7 +11,7 @@
     <h2>剩下{{t}}秒</h2>
     <button v-show="end" @click="end = false; t = 60; score = 0; win = false">再來一局</button>
     <a id = "win" v-show="win" @click="end = false; t = 60; score = 0; win = false">
-      <img src="/win2.png"/>
+      <img src="./win2.png"/>
     </a>
   </div>
 </template>
@@ -79,15 +79,15 @@ export default {
 
 .black {
   background-color: black;
-  background-image: url('/color.png');
+  background-image: url('./color.png');
 }
 
 a {
-  cursor: url('/hammer2.png'), pointer;
+  cursor: url('./hammer2.png'), pointer;
 }
 
 a.hit {
-  cursor: url('/hammer3.png'), pointer;
+  cursor: url('./hammer3.png'), pointer;
 }
 
 .hole {
