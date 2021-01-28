@@ -9,7 +9,7 @@
     </div>
     <h2>目前{{score}}分</h2>
     <h2>剩下{{t}}秒</h2>
-    <button class=big" v-show="end" @click="end = false; t = 60; score = 0; win = false">再來一局</button>
+    <button class="big" v-show="end" @click="end=false; t=60; score=0; win=false">再來一局</button>
     <a id = "win" v-show="win" @click="end = false; t = 60; score = 0; win = false">
       <img src="./win2.png"/>
     </a>
@@ -25,7 +25,7 @@ export default {
     },
     hit(k) {
       this.hiting = true;
-      if (!this.end) {
+      if (!this.end && !this.holes[k]) {
         this.holes[k] = true;
         this.$forceUpdate();
         this.score += 1;
@@ -109,10 +109,6 @@ a.hit {
   position: relative;
   top: 0;
   transition: all 2s ease;
-}
-
-.mole.hide {
-  height: 0;
 }
 
 .mole.hide img {
