@@ -9,7 +9,7 @@
     </div>
     <h2>目前{{score}}分</h2>
     <h2>剩下{{t}}秒</h2>
-    <button v-show="end" @click="end = false; t = 60; score = 0; win = false">再來一局</button>
+    <button class=big" v-show="end" @click="end = false; t = 60; score = 0; win = false">再來一局</button>
     <a id = "win" v-show="win" @click="end = false; t = 60; score = 0; win = false">
       <img src="./win2.png"/>
     </a>
@@ -77,6 +77,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.big {
+  font-size: 36px;
+  font-weight: bold;
+}
+
 .black {
   background-color: black;
   background-image: url('./color.png');
@@ -104,6 +109,10 @@ a.hit {
   position: relative;
   top: 0;
   transition: all 2s ease;
+}
+
+.mole.hide {
+  height: 0;
 }
 
 .mole.hide img {
